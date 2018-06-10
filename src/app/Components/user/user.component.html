@@ -1,0 +1,68 @@
+<!-- <p>
+  user works!
+</p> -->
+<h1>Hello World {{name}}</h1>
+<p>Age: {{age}}</p>
+<p>Email: {{email}}</p>
+<p>Address: {{address.Street}}, {{address.City}} , {{address.State}}</p>
+
+
+<h2>Hobbies</h2>
+<form (submit)="addHobby(hobby.value)">
+    <div>
+      <label for="hobby">Hobby:</label>  <input type='text' #hobby>
+    </div>
+    </form>
+<ul>
+  <li *ngFor="let hobby of hobbies; let i = index">
+     {{i+1}}: {{hobby}} <button (click) ="deleteHobby(hobby)"> X </button>     
+  </li>
+</ul>
+
+<li>
+    <button (click)="onClick()">Click Me</button>
+    <button (click)="toggleEdit()">Toggle Edit</button>
+    </li>
+<div>
+
+    <div *ngIf=isEdit>
+        <h1>Edit User</h1>
+        <form>  
+            <div>
+              <label for="name">Name: </label><br>
+              <input type="text" [(ngModel)]="name" name="name">
+            </div>
+            <div>
+              <label for="age">Age: </label><br>
+              <input type="number" [(ngModel)]="age" name="age">
+            </div>
+            <div>
+              <label for="email">Email: </label><br>
+              <input type="text" [(ngModel)]="email" name="email">
+            </div>
+            <div>
+              <label for="street">Street: </label><br>
+              <input type="text" [(ngModel)]="address.Street" name="street">
+            </div>
+            <div>
+              <label for="city">City: </label><br>
+              <input type="text" [(ngModel)]="address.City" name = "city">
+            </div>
+            <div>
+              <label for="state">State: </label><br>
+              <input type="text" [(ngModel)]="address.State" name = "state">
+            </div>
+      
+        </form>
+      
+      </div>
+
+<ul>
+  <li *ngFor="let post of posts">
+     <h4>{{post.title}}</h4>  
+     <p>{{post.body}}</p>
+  </li>
+</ul>
+</div>
+
+ 
